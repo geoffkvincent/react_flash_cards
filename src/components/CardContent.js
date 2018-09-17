@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from './Question'
 
-const CardContent = ({ cards, updateCard, deleteCard }) => (
+const CardContent = ({ cards, question, updateCard, deleteCard }) => (
   <div className="row">
     { cards.map( question =>
         <Question
