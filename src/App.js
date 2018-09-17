@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CardForm from './components/CardForm';
+import CardContent from './components/CardContent'
 
-class App extends Component {
+
+class App extends React.Component {
+  state = { cards: [] }
+
+  addCard = (question) => {
+
+  }
+
+  updateCard = (id) => {
+
+  }
+
+  deleteCard = (id) => {
+
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <CardForm addCard={this.addCard} />
+        <CardContent
+          cards={this.state.cards}
+          updateCard={this.updateCard}
+          deleteCard={this.deleteCard}
+        />
       </div>
     );
   }
