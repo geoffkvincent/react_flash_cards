@@ -4,8 +4,17 @@ class Form extends React.Component {
   initialState = { front: '', back: ''}
   state = {...this.initialState}
 
+  componentDidUpdate(prevProps, prevState) {
+    const { editing} = this.props
+    if (prevProps.editing !== this.props.edting) {
+      if (editing)
+        this.setState({...editing})
+    }
+  }
+
   handleChange = (e) => {
-    
+    const {name, value} = e.target
+    this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
@@ -32,7 +41,7 @@ class Form extends React.Component {
             required
           />
         </div>
-        <button type="button" className="btn" onClick={this.this.cancel}>
+        <button type="button" className="btn" onClick={this.cancel}>
           cancel
         </button>
         <button className="btn">Submit</button>
