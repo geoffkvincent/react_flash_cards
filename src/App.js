@@ -3,12 +3,7 @@ import Form from './Form'
 import Card from './Card'
 
 class App extends React.Component {
-  state = {cards:[ 
-    {id: 1, front: 'why do you suck?', back: 'because your butt', show: 'front'}, 
-    {id: 2, front: 'is coding hard?', back: 'yes', show: 'back'}, 
-    {id: 3, front: 'does coding kinda suck?', back: 'yeah it kinda does', show: 'front'},
-    ], 
-    editing: null }
+  state = {cards:[], editing: null }
 
   flipCard = (id) => {
     const { cards } = this.state

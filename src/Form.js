@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Form = () => (
-  <div>
-    
-  </div>
-)
+class Form extends React.Component {
+  initialState = { front: '', back: ''}
+  state = {...this.initialState}
+  
+  render () {
+    return (
+      null
+    )
+  }
+}
 
 export default Form
