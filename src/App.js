@@ -3,7 +3,30 @@ import Form from './Form'
 import Card from './Card'
 
 class App extends React.Component {
-  state = {cards:[], editing: null }
+  state = {cards:[ {id: 1, front: 'what', back: 'ok', show: 'front'}, {id: 2, front: 'what', back: 'ok', show: 'back'}, {id: 3, front: 'what', back: 'ok', show: 'front'}], editing: null }
+
+  flipCard = (id) => {
+    const { cards } = this.state
+    this.setState({
+      cards: cards.map(card => {
+        if( card.id === id) {
+          return {
+            ...card,
+            show: card.show ==='front' ? 'back' : 'front'
+          }
+        }
+        return card
+      })
+    })
+  }
+
+  toggleEdit = (id) => {
+
+  }
+
+  deleteCard = (id) => {
+
+  }
 
   showCards = () => {
     const {cards} = this.state
@@ -13,6 +36,9 @@ class App extends React.Component {
             <Card 
               key={card.id}
               {...card}
+              flipCard={this.flipCard}
+              toggleEdit={this.toggleEdit}
+              deleteCard={this.deleteCard}
             />
           )
         }
