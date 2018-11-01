@@ -3,7 +3,7 @@ import Form from './Form'
 import Card from './Card'
 
 class App extends React.Component {
-  state ={cards:[], editing: null}
+  state = {cards:[], editing: null }
 
   showCards = () => {
     const {cards} = this.state
@@ -21,6 +21,7 @@ class App extends React.Component {
   }
 
   render () {
+    const {cards, editing} = this.state
     return (
       <div className="container">
         <Form  editing={editing}/>
