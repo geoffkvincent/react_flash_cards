@@ -12,6 +12,15 @@ class Form extends React.Component {
     }
   }
 
+  cancel = () => {
+    const {editing = {} } = this.props
+    if (editing.id) {
+      this.setState({...editing})
+    } else {
+      this.setState({...this.initialState})
+    }
+  }
+
   handleChange = (e) => {
     const {name, value} = e.target
     this.setState({ [name]: value })
