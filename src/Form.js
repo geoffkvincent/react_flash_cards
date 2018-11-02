@@ -28,6 +28,10 @@ class Form extends React.Component {
 
   handleSubmit = (e) => {
     e.prevent.default()
+    const { editing, handleSubmit} = this.props
+    const {front, back} = this.state
+    let card = editing || {}
+    card.front
   }
 
   render () {
