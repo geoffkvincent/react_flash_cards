@@ -3,7 +3,7 @@ import Form from './Form'
 import Card from './Card'
 
 class App extends React.Component {
-  state = {cards:[{id: 1, front: 'cool', back: 'stuff', show: 'front'}], editing: null }
+  state = {cards:[{id: 1, front: 'cool', back: 'stuff', show: 'front'}, {id: 2, front: 'what', back: 'answer', show: 'front'} ], editing: null }
 
   flipCard = (id) => {
     const { cards } = this.state
@@ -22,7 +22,7 @@ class App extends React.Component {
 
   toggleEdit = (id = null) => {
     const {cards} = this.state
-    const editing = cards.find(card => card.id === id)
+    const editing = cards.find(c => c.id === id)
     this.setState({ editing })
   }
 

@@ -5,8 +5,8 @@ class Form extends React.Component {
   state = {...this.initialState}
 
   componentDidUpdate(prevProps, prevState) {
-    const { editing } = this.props
-    if (prevProps.editing !== this.props.edting) {
+    const {editing} = this.props
+    if (prevProps.editing !== this.props.editing) {
       if (editing)
         this.setState({...editing})
     }
