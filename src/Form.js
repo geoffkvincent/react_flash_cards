@@ -13,8 +13,8 @@ class Form extends React.Component {
   }
 
   cancel = () => {
-    const {editing = {} } = this.props
-    if (editing.id) {
+    const {editing} = this.props
+    if (editing) {
       this.setState({...editing})
     } else {
       this.setState({...this.initialState})
