@@ -6,7 +6,7 @@ class App extends React.Component {
   state = {cards:[{id: 1, front: 'cool', back: 'stuff', show: 'front'}, {id: 2, front: 'what', back: 'answer', show: 'front'} ], editing: null }
 
   handleSubmit = (card) => {
-    const {editing} =this.state
+    const {editing} = this.state
     let cards
 
     if (editing) {
@@ -16,7 +16,7 @@ class App extends React.Component {
         return c
       })
     } else {
-      cards = [...this.state.cards, cards]
+      cards = [...this.state.cards, card]
     }
     this.setState({ cards, editing: null })
   }

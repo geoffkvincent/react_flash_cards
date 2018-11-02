@@ -27,13 +27,14 @@ class Form extends React.Component {
   }
 
   handleSubmit = (e) => {
-    e.prevent.default()
+    e.preventDefault()
     const { editing, handleSubmit} = this.props
     const {front, back} = this.state
     let card = editing || {}
     card.front = front
     card.back = back
-    card.id = card.id || this.getId()
+    card.show = card.show || 'front'
+    card.id = card.id || this.genId()
     handleSubmit(card)
     this.setState({ ...this.initialState })
   }
@@ -65,7 +66,7 @@ class Form extends React.Component {
         <button type="button" className="btn" onClick={this.cancel}>
           cancel
         </button>
-        <button className="btn">Submit</button>
+        <button className="btn">Save</button>
       </form>
     )
   }
