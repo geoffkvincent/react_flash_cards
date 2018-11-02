@@ -31,7 +31,15 @@ class Form extends React.Component {
     const { editing, handleSubmit} = this.props
     const {front, back} = this.state
     let card = editing || {}
-    card.front
+    card.front = front
+    card.back = back
+    card.id = card.id || this.getId()
+    handleSubmit(card)
+    this.setState({ ...this.initialState })
+  }
+
+  genId = () => {
+    return Math.floor(Math.random() * 1000)
   }
 
   render () {

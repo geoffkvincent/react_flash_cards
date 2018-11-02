@@ -5,6 +5,22 @@ import Card from './Card'
 class App extends React.Component {
   state = {cards:[{id: 1, front: 'cool', back: 'stuff', show: 'front'}, {id: 2, front: 'what', back: 'answer', show: 'front'} ], editing: null }
 
+  handleSubmit = (card) => {
+    const {editing} =this.state
+    let cards
+
+    if (editing) {
+      cards = this.state.cards.map( c => {
+        if (c.id === editing.id)
+          return card
+        return c
+      })
+    } else {
+      cards = [...this.state.cards, cards]
+    }
+    this.setState({ cards, editing: null })
+  }
+
   flipCard = (id) => {
     const { cards } = this.state
     this.setState({
@@ -54,7 +70,7 @@ class App extends React.Component {
     const {cards, editing} = this.state
     return (
       <div className="container">
-        <Form  editing={editing}/>
+        <Form  editing={editing} handleSubmit={this.handleSubmit}/>
         { cards.length ? this.showCards() : <h1 className="center">No Cards</h1> }
       </div>
     )
