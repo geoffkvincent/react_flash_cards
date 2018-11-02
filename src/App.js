@@ -20,14 +20,16 @@ class App extends React.Component {
     })
   }
 
-  toggleEdit = (id) => {
+  toggleEdit = (id = null) => {
     const {cards} = this.state
     const editing = cards.find(card => card.id === id)
     this.setState({ editing })
   }
 
   deleteCard = (id) => {
-    this.setState({ cards: this.state.cards.filter( c => c.id !==id) })
+    const {cards} = this.state
+    const remaining = cards.filter(c => c.id !==id)
+    this.setState({cards: remaining})
   }
 
   showCards = () => {
