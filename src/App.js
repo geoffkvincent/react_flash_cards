@@ -3,7 +3,7 @@ import Form from './Form'
 import Card from './Card'
 
 class App extends React.Component {
-  state = {cards:[], editing: null, cardNumber: 0 }
+  state = {cards:[{front: 'test1', back: 'tes2'}, {front: 'asdf', back: 'tjdes2'}, {front: 'tdjgfdj', back: 'tesxcs'} ], editing: null, cardNumber: 0 }
 
   handleSubmit = (card) => {
     const {editing} = this.state
