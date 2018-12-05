@@ -73,7 +73,7 @@ class App extends React.Component {
 
   prevCard = () => {
     const {cardNumber} = this.state
-    return this.setState({cardNumber: cardNumber + 1})
+    return this.setState({cardNumber: cardNumber - 1})
   }
 
   render () {
