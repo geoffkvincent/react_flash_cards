@@ -67,11 +67,13 @@ class App extends React.Component {
   }
 
   nextCard = () => {
-
+    const {cardNumber} = this.state
+    return this.setState({cardNumber: cardNumber + 1})
   }
 
   prevCard = () => {
-    
+    const {cardNumber} = this.state
+    return this.setState({cardNumber: cardNumber + 1})
   }
 
   render () {
@@ -80,7 +82,7 @@ class App extends React.Component {
       <div className="container">
         <Form  editing={editing} handleSubmit={this.handleSubmit}/>
         { cards.length ? this.showCards() : <h1 className="center">No Cards</h1> }
-        <button>-</button>
+        <button onClick={this.prevCard}>-</button>
         <button onClick={this.nextCard}>+</button>
       </div>
     )
