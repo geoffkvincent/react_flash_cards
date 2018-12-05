@@ -56,7 +56,7 @@ class App extends React.Component {
     this.setState({cards: remaining})
   }
 
-  showCards = () => {
+  showCards = (cardNumber) => {
     const {cards} = this.state
     return (
       <div className="row">
