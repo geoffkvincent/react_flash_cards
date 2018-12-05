@@ -5,9 +5,9 @@ import Card from './Card'
 class App extends React.Component {
   state = { cards:
     [
-      {front: 'test1', back: 'tes2'}, 
-      {front: 'asdf', back: 'tjdes2'}, 
-      {front: 'tdjgfdj', back: 'tesxcs'} 
+      {id: 1, front: 'test1', back: 'tes2'}, 
+      {id: 2, front: 'asdf', back: 'tjdes2'}, 
+      {id: 3, front: 'tdjgfdj', back: 'tesxcs'} 
     ], 
     editing: null, 
     cardNumber: 0 ,
@@ -75,9 +75,14 @@ class App extends React.Component {
     )
   }
 
+  currentCard = () => { 
+
+  }
+
   nextCard = () => {
     const {cardNumber} = this.state
     return this.setState({cardNumber: cardNumber + 1})
+    this.state.cards.filter
   }
 
   prevCard = () => {
