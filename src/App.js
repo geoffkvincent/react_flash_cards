@@ -67,6 +67,10 @@ class App extends React.Component {
   }
 
   nextCard = () => {
+
+  }
+
+  prevCard = () => {
     
   }
 
@@ -77,7 +81,7 @@ class App extends React.Component {
         <Form  editing={editing} handleSubmit={this.handleSubmit}/>
         { cards.length ? this.showCards() : <h1 className="center">No Cards</h1> }
         <button>-</button>
-        <button>+</button>
+        <button onClick={this.nextCard}>+</button>
       </div>
     )
   }
