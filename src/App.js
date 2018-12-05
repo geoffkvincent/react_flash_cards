@@ -10,7 +10,8 @@ class App extends React.Component {
       {front: 'tdjgfdj', back: 'tesxcs'} 
     ], 
     editing: null, 
-    cardNumber: 0 
+    cardNumber: 0 ,
+    showCard: false
   }
 
   handleSubmit = (card) => {
