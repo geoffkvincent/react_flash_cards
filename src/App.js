@@ -3,7 +3,7 @@ import Form from './Form'
 import Card from './Card'
 
 class App extends React.Component {
-  state = {cards:[], editing: null }
+  state = {cards:[], editing: null, cardNumber: 0 }
 
   handleSubmit = (card) => {
     const {editing} = this.state
@@ -66,12 +66,18 @@ class App extends React.Component {
     )
   }
 
+  nextCard = () => {
+    
+  }
+
   render () {
     const {cards, editing} = this.state
     return (
       <div className="container">
         <Form  editing={editing} handleSubmit={this.handleSubmit}/>
         { cards.length ? this.showCards() : <h1 className="center">No Cards</h1> }
+        <button>-</button>
+        <button>+</button>
       </div>
     )
   }
