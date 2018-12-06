@@ -76,7 +76,7 @@ class App extends React.Component {
     )
   }
 
-  currentCard = ()
+  currentCard
 
   nextCard = () => {
     const {cardNumber} = this.state
