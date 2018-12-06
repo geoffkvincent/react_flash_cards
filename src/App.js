@@ -12,6 +12,7 @@ class App extends React.Component {
     editing: null, 
     cardNumber: 0 ,
     showCard: false
+
   }
 
   handleSubmit = (card) => {
@@ -77,7 +78,7 @@ class App extends React.Component {
 
   currentCard = () => { 
 
-  }
+  
 
   nextCard = () => {
     const {cardNumber} = this.state
@@ -96,8 +97,6 @@ class App extends React.Component {
       <div className="container">
         <Form  editing={editing} handleSubmit={this.handleSubmit}/>
         { cards.length ? this.showCards() : <h1 className="center">No Cards</h1> }
-        <button onClick={this.prevCard}>-</button>
-        <button onClick={this.nextCard}>+</button>
       </div>
     )
   }
